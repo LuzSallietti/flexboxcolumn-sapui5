@@ -10,7 +10,7 @@
 		<f:title>
 			<f:DynamicPageTitle id="dynamicPageTitle">
 				<f:heading>
-					<Title id="title" text="Detalles"/>
+					<Title id="title" text="Details"/>
 				</f:heading>
 						</f:DynamicPageTitle>
 		</f:title>

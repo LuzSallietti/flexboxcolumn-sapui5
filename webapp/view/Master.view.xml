@@ -1,46 +1,77 @@
-<mvc:View controllerName="invoicesv2.invoicesv2.controller.Master"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" height="100%"
+<mvc:View
+    controllerName="invoicesv2.invoicesv2.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    height="100%"
     xmlns="sap.m"
-	xmlns:f="sap.f">
-    <f:DynamicPage id="dynamicPageId">
+    xmlns:f="sap.f"
+>
+    <f:DynamicPage id="dynamicPageIdMaster">
         <!-- DynamicPage Title -->
-		<f:title>
-			<f:DynamicPageTitle id="dynamicPageTitle">				                
-                <f:content>
-                    <Table id="invoicesTable"
-                    items="{path:'invoiceModel>/'}">
-                    <columns>
-                        <Column id="customerIdCol">
-                            <Text text="{i18n>customerId}"/>
-                        </Column>
-                        <Column id="customerNameCol">
-                            <Text text="{i18n>customerName}"/>
-                        </Column>
-                        <Column id="orderDateCol">
-                            <Text text="{i18n>orderDate}"/>
-                        </Column>
-                        <Column id="orderIdCol">
-                            <Text text="{i18n>orderId}"/>
-                        </Column>
-                        <Column id="extendedPriceCol">
-                            <Text text="{i18n>extendedPrice}"/>
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem type="Active" vAlign="Middle" press="onItemPress">
-                            <cells> 
-                            <ObjectIdentifier title="" text="{invoiceModel>CustomerID}"/> 
-                            <ObjectIdentifier title="" text="{invoiceModel>CustomerName}"/>
-                            <ObjectIdentifier title="" text="{path:'invoiceModel>OrderDate', formatter:'.Formatter.formatDate'}"/> 
-                            <ObjectIdentifier title="" text="{invoiceModel>OrderID}"/> 
-                            <ObjectIdentifier title="" text="{invoiceModel>ExtendedPrice}"/>   
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                    </Table>                   
-                </f:content>
-                <!-- Aquí continuar con la tabla -->
-			</f:DynamicPageTitle>
-		</f:title>
+        <f:title>
+            <f:DynamicPageTitle id="dynamicPageTitleMaster">
+                <f:heading>
+                    <Title
+                        id="title"
+                        text="Invoices"
+                    />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:content>
+            <Table
+                id="invoicesTable"
+                items="{path:'invoiceModel>/'}"
+            >
+                <columns>
+                    <Column id="customerIdCol">
+                        <Text text="{i18n>customerId}" />
+                    </Column>
+                    <Column id="customerNameCol">
+                        <Text text="{i18n>customerName}" />
+                    </Column>
+                    <Column id="orderDateCol">
+                        <Text text="{i18n>orderDate}" />
+                    </Column>
+                    <Column id="orderIdCol">
+                        <Text text="{i18n>orderId}" />
+                    </Column>
+                    <Column id="extendedPriceCol">
+                        <Text text="{i18n>extendedPrice}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        vAlign="Middle"
+                        press="onItemPress"
+                    >
+                        <cells>
+                            <ObjectIdentifier
+                                title=""
+                                text="{invoiceModel>CustomerID}"
+                            />
+                            <ObjectIdentifier
+                                title=""
+                                text="{invoiceModel>CustomerName}"
+                            />
+                            <ObjectIdentifier
+                                title=""
+                                text="{path:'invoiceModel>OrderDate', formatter:'.Formatter.formatDate'}"
+                            />
+                            <ObjectIdentifier
+                                title=""
+                                text="{invoiceModel>OrderID}"
+                            />
+                            <ObjectIdentifier
+                                title=""
+                                text="{invoiceModel>ExtendedPrice}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
     </f:DynamicPage>
 </mvc:View>
