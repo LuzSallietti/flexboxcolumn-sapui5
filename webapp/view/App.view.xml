@@ -1,0 +1,14 @@
+<mvc:View xmlns:m="sap.m" xmlns:f="sap.f" controllerName="invoicesv2.invoicesv2.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" height="100%"
+    xmlns="sap.f"    
+    > 
+    <m:App id="app">   
+        <f:FlexibleColumnLayout id="fcl" layout="{appView>/layout}"
+            autoFocus="false"
+            backgroundDesign="Translucent"
+            restoreFocusOnBackNavigation="true">               
+                
+        </f:FlexibleColumnLayout>
+    </m:App>        
+</mvc:View>

@@ -1,0 +1,49 @@
+<mvc:View controllerName="invoicesv2.invoicesv2.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	>
+
+    <f:DynamicPage id="dynamicPageId">
+        <!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle id="dynamicPageTitle">
+				<f:heading>
+					<Title id="title" text="Detalles"/>
+				</f:heading>
+						</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+                <!-- Aquí continuar con el Simple Form y la vista de Detalle -->				
+		<form:SimpleForm id="simpleFormid"
+					editable="false"
+					layout="ResponsiveGridLayout"
+					title="Address"
+					labelSpanXL="4"
+					labelSpanL="3"
+					labelSpanM="4"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="4"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false">
+					<form:content>
+						<Label text="{i18n>customerName}" />
+						<Text text="{detailModel>/CustomerName}" />
+						<Label text="{i18n>address}" />
+						<Text text="{detailModel>/Address}" />
+						<Label text="{i18n>city}" />
+						<Text text="{detailModel>/City}" />
+						<Label text="{i18n>country}" />
+						<Text text="{detailModel>/Country}" />
+					</form:content>
+		</form:SimpleForm>
+		</f:content>
+    </f:DynamicPage>
+</mvc:View>
