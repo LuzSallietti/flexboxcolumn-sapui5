@@ -11,11 +11,10 @@ sap.ui.define(    [
          
           //Crear modelo para almacenar layout de FlexBox Column
           let oViewModel = new JSONModel({
-            layout: "OneColumn" 
+            layout: Constants.layouts.oneColumn 
           });
 
-          this.getOwnerComponent().setModel(oViewModel, "appView");
-        
+          this.getOwnerComponent().setModel(oViewModel, Constants.models.appView);        
 
           //Obtener datos de la API
           const url = sap.ui.require.toUrl(Constants.namespace.name) + Constants.service.northwindUrl;
@@ -42,6 +41,7 @@ sap.ui.define(    [
           this.getOwnerComponent().setModel(oModel, Constants.models.invoiceModel); 
       },
       error: function () {
+          //En lugar de un alert, debe ir un Message toast conteniendo el mensaje
           alert("Error");
       },
       });

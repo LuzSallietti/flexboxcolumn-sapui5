@@ -13,10 +13,13 @@ sap.ui.define([], function (){
         models: {
             invoiceModel: "invoiceModel",
             i18n: "i18n",
+            detailModel: "detailModel",
+            appView: "appView"
             
         },
-        routes: {
-            detailRoute: "RouteDetail"
-        }       
+        layouts: {
+            oneColumn: "OneColumn",
+            twoColumnsMidExpanded: "TwoColumnsMidExpanded"
+        }            
     }
 }, true)

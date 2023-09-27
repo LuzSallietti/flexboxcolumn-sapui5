@@ -29,21 +29,19 @@ sap.ui.define([
                 const oInvoiceData = this.getView().getModel(Constants.models.invoiceModel).getProperty(sPath);
                 
                 var detailModel = new JSONModel(oInvoiceData);
-                this.getOwnerComponent().setModel(detailModel, 'detailModel') // Accedo a la app globalmente y seteo el model con el detalle
+                this.getOwnerComponent().setModel(detailModel, Constants.models.detailModel) // Accedo a la app globalmente y seteo el model con el detalle
 
                
-               //Trabajar el FlexboxColumn para que navegue al la vista y columna contenedora Detail
+               //Trabajar el FlexboxColumn para que navegue a la vista y columna contenedora Detail
 
                let oViewModel = new JSONModel({
-                layout: "TwoColumnsMidExpanded"
+                layout: Constants.layouts.twoColumnsMidExpanded
                 });
 
-                this.getOwnerComponent().setModel(oViewModel, "appView")
+                this.getOwnerComponent().setModel(oViewModel, Constants.models.appView)
                
-                // Navegar a la vista Detalle
-                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                oRouter.navTo(Constants.routes.detailRoute);
-            
+                // Navegar a la vista Detalle con navTo --> NO hace falta porque Detail ya está renderizado en el FlexibleColumn  y obtiene los datos del detailModel
+                            
             }
         });
     });
